@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pernapasan pada Manusia</title>
+    <link rel="stylesheet" href="../../navigasi.css">
+    <link rel="stylesheet" href="../../../border.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body  onload="drop();">
+  
+  <div class="header">
+      <center>A. Sistem Pernapasan</center>
+  </div>
+  <div class="btn">
+      <span class="fas fa-bars"></span>
+    </div>
+      <nav class="sidebar">
+        <div class="text"><img src="../../gambar/LOGO.png"></div>
+        <ul>
+          <li class="beranda"><a href="../../../index.html">Beranda</a></li>
+          <li>
+            <a href="../../pernapasan/1.html" class="migrasi">Materi Pembelajaran
+              <span class="fas fa-caret-down first"></span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="#" style=" color: #906741; background: #003c25;" class="kemagnetan">Sistem Pernapasan
+              <span class="fas fa-caret-down second"></span>
+            </a>
+            <ul class="kemagnetan-tampil">
+              <li><a href="../1/1.html">Alat Pernapasan</a></li>
+              <li><a style="  color: #906741;" href="1.html">Proses Pernapasan</a></li>
+   
+            </ul>
+          </li>
+          <li>
+            <a href="../../gangguan/1.html" class="produk">Gangguan Sistem Pernapasan
+              <span class="fas fa-caret-down tiga"></span>
+            </a>
+          
+          </li>
+          <li><a href="../../Evaluasi/eva.html">EVALUASI</a></li>
+
+        </ul>
+    </nav>
+<script>
+  function drop(){
+  $('nav ul .kemagnetan-tampil').toggleClass("show1");
+  $('nav ul .second').toggleClass("rotate");
+   }
+</script>
+    <div class="content">
+      <br>
+      <h3> <img src="../../gambar/tujuan.png"><p class="textjudul">Proses Pernapasan</p></h3>
+      <br>
+      
+      <div class="canvas">
+        Proses pemapasan meliputi proses pengambilan udara dari luar tubuh (inspirasi) dan proses pengeluaran udara dari dalam tubuh (ekspirasi). Proses tersebut berlangsung sebanyak 15-18 kali per menit. Proses ekspirasi berlangsung karena kegiatan otot-otot diafragma dan otot-otot antartulang rusuk (interkostalis). Kerja otot-otot tersebutlah yang dapat mengatur volume ruang dada, memperbesar atau memperkecil sesuai dengan kehendak kita. 
+
+      <br><br>
+      Proses pernapasan dibedakan menjadi dua berdasarkan otot-otot yang berkontraksi, yaitu pernapasan dada dan pernapasan perut.
+      <br><br>
+
+        <div class="canvas" style="background-color: white;">
+          
+          <div id="deklinasi" style="display: initial;">
+            <center><img  width="270px" src="gambar/PernapasanDada.png"></center>
+            <b>Pernapasan Dada</b> <br><br>
+            <p>Pernapasan dada dimulai dengan berkontraksinya otot-otot antartulang rusuk yang menyebab- kan tulang-tulang rusuk terangkat dan rongga dada membesar. Membesarnya rongga dada tersebut menyebabkan tekanan udara di dalam paru-paru menurun, sehingga udara di luar masuk ke paru- paru (inspirasi), Apabila otot-otot antartulang rusuk berelaksasi, tulang-tulang rusuk menurun sehingga volume rongga dada mengecil. Akibatnya tekanan udara dalam paru-paru naik dan udara keluar dari paru-paru (ekspirasi).
+            </p>
+          </div>
+          <div id="inklinasi" style="display: none;">    
+            <center><img width="270px" src="gambar/PernapasanPerut.png"></center>
+            <b>Pernapasan Perut</b> <br><br>
+            <p>Pernapasan perut dimulai dengan berkontraksinya otot-otot diafragma yang menyebabkan diafragma mendatar. Dengan demikian rongga dada membesar dan tekanan udara di dalam paru-paru menurun, sehingga udara luar masuk ke dalam paru-paru (inspirasi). Apabila otot-otot diafragma berelaksasi, kedudukan diafragma melengkung ke atas, akibatnya rongga dada mengecil dan tekanan udara di dalam paru-paru membesar sehingga udara keluar dari paru-paru (ekspirasi).
+            </p>
+          </div>
+          <br>
+        <center>
+          <button class="btnangka" style="background:black;" id="tombol" onclick="gbr1()" type="button">1</button>
+          <button class="btnangka" style="background: #04709b;" id="tombol2" onclick="gbr2()" type="button">2</button>
+        </center>
+      </div>
+     <br>
+      Ekspirasi terjadi bukan saja akibat mengendornya otot-otot antar tulang rusuk dan otot-otot diafragma, melainkan juga karena adanya otot-otot antagonis yang mengerut, misalnya otot-otot antar rusuk lainnya maupun otot dinding perut. Tersedak dan bersin merupakan ekspirasi yang mendadak oleh pengerutan secara tiba-tiba dari otot-otot perut, sehingga isi perut mendorong diafragma ke atas. 
+     <br><br>
+      Akibatnya, rongga dada mengecil secara tiba-tiba, sehingga tekanan di dalam paru-paru menjadi tinggi dan udara keluar dengan keras dari paru-paru. Mekanisme tersedak dan bersin merupakan usaha tubuh (sistem pernapasan) untuk mengeluarkan benda asing dalam saluran pernapasan.
+     <br>
+      </div>
+     <br>
+     <h3> <img src="../../gambar/menonton.png"><p class="textjudul">Mari Mengamati</p></h3>
+     <div class="canvas">
+       Amatilah video berikut ini dengan seksama.
+       
+       <center>
+         <video id="vidio" controls>
+           <source src="gambar/Proses Pernapasan.mp4">
+         </video>
+         <br>
+         <i>Video 2. Proses Pernapasan Manusia</i>
+       </center>
+
+     </div>
+    <br>
+    <h3> <img src="../../gambar/kesimpulan.png"><p class="textjudul">Kesimpulan</p></h3>
+    <div class="canvas">
+       <div id="sebelum"  style="color: brown;">
+          <center>
+            <b>KESIMPULAN AKAN MUNCUL SETELAH SELESAI MENJAWAB LATIHAN</b>
+          </center>
+      </div>
+      <div id="kesimpulan" style="display:none;">
+        Sudut deklinasi adalah sudut yang dibentuk oleh jarum kompas dengan simpangan arah utara dan selatan bumi. Sedangkan Sudut inklinasi adalah sudut yang dibentuk dari penyimpangan magnet terhadap arah barat dan timur geografis.       </div>
+    </div>
+    <br><br>
+    </div>
+    </div>
+    <script src="../../navigasi.js"></script>
+    <script src="1.js"></script>
+
+    <div class="footer">
+      <div class="navigasibawah">
+        <center>
+          <a href="../1/5.html"><button >Sebelumnya</button></a>
+          <a href="1.html"><button class="btn1">1</button></a>
+          <a href="../../gangguan/1.html"><button >Selanjutnya</button></a>
+        </center>
+      </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+   
+    <head>
+        <link rel="stylesheet" href="style.css">
+            <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
+
+            <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+    </head>
+
+<body style=" background-color: #007cad;">
+
+  <div id="popup" style="display: none;">
+    Kuis/Evaluasi belum dibuka
+  </div>
+             <!-- Modal -->
+	<!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="petunjuk" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Petunjuk </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <ol>
+                <li>
+                    Masukkan data diri anda seperti nama, kelas, dan sekolah sesuai tempat isiannya. 
+                </li>
+                <li>
+                    Setelah selesai mengisi data klik tombol <button type="button" class="btn btn-primary btn-sm" >Mulai</b></button> 
+                </li>
+                <li>
+                    Waktu mengerjakan Kuis adalah 30 Menit.
+                    
+                </li>
+                <li>
+                   Tekan tombol <button type="button" class="btn btn-success btn-sm" >Soal <b> 1/20</b></button> untuk melihat navigasi soal.
+                </li>
+            </ol>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    
+
+    <!-- Badan Data diri -->
+        <div class="container" id="data_diri">
+            <div class="row justify-content-center mt-5">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body">
+                    <form action="">
+                      <div class="form-group">
+                        <br>
+                       <center> <button  onclick="mulai()" type="button" class="btn btn-primary">Mulai</button>
+                       <button type="button" class="btn btn-success" data-toggle="modal" data-target="#petunjuk">
+                        Petunjuk
+                       </button>
+                       </center>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+            <!-- Badan soal -->
+
+            <!-- Navigasi-->
+            <div class="navigasi" id="navigasi">
+                    <center>Nomor Soal</center>
+                <div class="card-header bg-transparent mb-0"></div>
+                <br>
+                <button id="tombol1" type="button" class="tombol">1</button>
+                <button id="tombol2" type="button" class="tombol">2</button>
+                <button id="tombol3" type="button" class="tombol">3</button>
+                <button id="tombol4" type="button" class="tombol">4</button>
+                <button id="tombol5" type="button" class="tombol">5</button>
+                <button id="tombol6" type="button" class="tombol">6</button>
+                <button id="tombol7" type="button" class="tombol">7</button>
+                <button id="tombol8" type="button" class="tombol">8</button>
+                <button id="tombol9" type="button" class="tombol">9</button>
+                <button id="tombol10" type="button" class="tombol">10</button>
+                <button id="tombol11" type="button" class="tombol">11</button>
+                <button id="tombol12" type="button" class="tombol">12</button>
+                <button id="tombol13" type="button" class="tombol">13</button>
+                <button id="tombol14" type="button" class="tombol">14</button>
+                <button id="tombol15" type="button" class="tombol">15</button>
+                <button id="tombol16" type="button" class="tombol">16</button>
+                <button id="tombol17" type="button" class="tombol">17</button>
+                <button id="tombol18" type="button" class="tombol">18</button>
+                <button id="tombol19" type="button" class="tombol">19</button>
+                <button id="tombol20" type="button" class="tombol">20</button>
+                
+                
+                <div class="card-header bg-transparent mb-0"></div>
+                Keterangan :<br>
+                <button type="button" class="tombol">-</button> = Belum dijawab
+                <br>
+                <button type="button" class="tombol2">-</button> = Sudah dijawab
+
+            </div>
+        <!-- SOAL-->
+        <div class="container" id="badan" style="display: none;">
+
+                <div class="card">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm" style="padding-left: 20px;">
+                            <button type="button" class="btn btn-success btn-sm" onclick="navTampil()">Soal <b> <a id="no_soal"></a>/20</b></button>
+                        </div>
+                        <div class="col-sm">
+                            <h5 class="text-center">Kuis 2 </h5>
+                        </div>
+                        <div class="col-sm" style="text-align: right;">
+                          
+                        </div>
+                      </div>
+                    <div class="card-header bg-transparent mb-0"></div>
+                  
+                  <div class="card-body">
+                    <div  id="gambar"></div>          
+                    <div  id="t_soal"></div>
+                    <br>
+                    <label class="radio"> <div class="jawaban" id="jwb1"></div>
+                        <input type="radio" name="radio" value="a" onclick="simpan()" id="pilihan1">
+                        <span class="check"></span>
+                    </label>
+                    <label class="radio"> <div class="jawaban" id="jwb2"></div>
+                        <input type="radio" name="radio" value="b" onclick="simpan()" id="pilihan2">
+                        <span class="check"></span>
+                    </label>
+                    <label class="radio"><div class="jawaban" id="jwb3"></div>
+                        <input type="radio" name="radio" value="c" onclick="simpan()" id="pilihan3">
+                        <span class="check"></span>
+                    </label>
+                    <label class="radio"> <div class="jawaban" id="jwb4"></div>
+                        <input type="radio" name="radio" value="d" onclick="simpan()" id="pilihan4">
+                        <span class="check"></span>
+                    </label>
+                    <br>
+                    <div class="row">
+                        <div class="col-8">
+                            <button onclick="prev()" id="sebelumnya" type="button" class="btn btn-primary">Sebelumnya</button>
+                            <button onclick="next()"id="Selanjutnya" type="button" class="btn btn-primary">Selanjutnya</button>
+                            <button onclick="selesai()"id="Selanjutnya" type="button" class="btn btn-primary">selesai</button>
+                        </div>
+                        <div class="col-4">Waktu :<b><span id="time">15:00</span></b> </div>
+                      </div>
+                   
+                    
+                    </div>
+                </div>
+               
+            </div>
+
+            <!--POP UP Waktu habis -->
+            <div id="waktuhabis"  style="display: none;">
+                    <div class="popup">
+                        <h5 class="text-center">Waktu Habis </h5>
+                        <div class="card-header bg-transparent mb-0"></div>
+                        <br>
+                            <p>
+                                Sayang sekali, Kamu telah melewati batas waktu pengerjaan kuis/evaluasi. 
+                                Kamu dapat mempelajari lagi materi dengan penuh semangat agar dapat menjawab soal dengan lebih cepat.
+                            </p>
+                  
+                        <button style="text-align: right;" type="button" class="btn btn-danger" onclick="refresh()">Close</button>
+                    </div>
+  
+            </div>
+            
+            <!-- Hasil Akhir-->
+             <!-- Badan Data diri -->
+        <div class="container" id="hasil_skor">
+            <div class="row justify-content-center mt-5">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header bg-transparent mb-0"><h5 class="text-center">HASIL ANDA </h5></div>
+                  <div class="card-body">
+                    
+                      
+                        <p>Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <a class="nama"></a>
+                      
+                        <p>Sekolah &nbsp;&nbsp;: <a class="sekolah"></a>
+                      
+                      
+                        <p>Kelas &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <a class="kelas"></a>
+                      
+                      
+                        <p>Skor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <a class="skor"></a>
+                      
+                      
+                        <p>Waktu &nbsp;&nbsp;&nbsp;&nbsp;: <a class="waktu"></a>
+                      
+                      
+                        <p>Waktu &nbsp;&nbsp;&nbsp;&nbsp;: <a class="hari"></a>
+                      
+                      <div class="gagal" id="gagal"  >Sayang sekali nilai kamu belum mencapai KKM. Pelajari kembali materi sebelumnya dengan penuh semangat.</div>
+                      <div class="berhasil" id="berhasil" >Selamat nilai kamu telah mencapai KKM. Pelajari materi berikutnya dengan penuh semangat.</div>
+                      <br>
+                        <center><button style="text-align: right;" type="button" class="btn btn-danger" onclick="refresh()">Tutup</button></center>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+     
+
+            <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <script src="soal.js"></script>
+    </body>
+</html>
