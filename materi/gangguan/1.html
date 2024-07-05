@@ -2,12 +2,25 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="../../koleksi/Kemendikbud.png">
     <title>Pernapasan pada Manusia</title>
     <link rel="stylesheet" href="../navigasi.css">
     <link rel="stylesheet" href="../../border.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .audio-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .audio-controls i {
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body onload="drop();">
   
@@ -15,7 +28,7 @@
       <center>B. Gangguan Sistem Pernapasan</center>
   </div>
   <div class="btn">
-      <span class="fas fa-bars"></span>
+      <span class="fa fa-bars"></span>
     </div>
       <nav class="sidebar">
         <div class="text"><img src="../gambar/LOGO.png"></div>
@@ -23,13 +36,13 @@
           <li class="beranda"><a href="../../index.html">Beranda</a></li>
           <li>
             <a href="../pernapasan/1.html" class="migrasi">Materi Pembelajaran
-              <span class="fas fa-caret-down first"></span>
+              
             </a>
           </li>
           
           <li>
             <a href="#" class="kemagnetan">Sistem Pernapasan
-              <span class="fas fa-caret-down second"></span>
+              <span class="fa fa-caret-down second"></span>
             </a>
             <ul class="kemagnetan-tampil">
               <li><a href="../sistem/1/1.html">Alat Pernapasan</a></li>
@@ -38,11 +51,19 @@
           </li>
           <li>
             <a href="../../gangguan/1.html" style=" color: #906741; background: #003c25;" class="produk">Gangguan Sistem Pernapasan
-              <span class="fas fa-caret-down tiga"></span>
+             
             </a>
            
           </li>
-          <li><a href="../Evaluasi/eva.html">EVALUASI</a></li>
+          <li>
+            <a href="#" class="migrasi">EVALUASI
+            <span class="fa fa-caret-down first"></span>
+            </a>
+            <ul class="migrasi-tampil">
+              <li><a href="../puzzle/puzzle.html">Puzzle</a></li>
+              <li><a href="../Evaluasi/eva.html">Kuis</a></li>
+            </ul>
+          </li>
 
         </ul>
     </nav>
@@ -59,28 +80,56 @@
       <h3> <img src="../gambar/tujuan.png"><p class="textjudul">Gangguan Pernapasan</p></h3>
       <div class="canvas">
         Pernapasan manusia dapat mengalami gangguan karena penyakit dan karena kelainan organ pernapasan. Penyakit dan kelainan pada pernapasan dapat menyebabkan hipoksia, yaitu suatu kondisi di- mana jaringan tubuh kekurangan oksigen, Beberapa kelainan dan gangguan pada pernapasan antara lain sebagai berikut.
+        <br><br>
+        <div class="audio-controls">
+          <i class="fa fa-play" id="audioControl1" onclick="toggleAudio('materiTeksAudio1', 'audioControl1')"></i>
+        </div>
+        <audio id="materiTeksAudio1">
+          <source src="../../koleksi/audio/Gangguan Pernapasan.mp3" type="audio/mpeg">
+        </audio>
       </div>
       <br>
       <div class="borderbab" style="text-align: left;">
         1. Polip dan Amandel
       </div>
       <div class="canvas">
-        Gangguan karena penyempitan atau penyumbatan saluran pernapasan dapat disebabkan karena pembengkakan kelenjar limfe, misalnya polip (di daerah hidung) dan amandel (di daerah tekak), ataupun adenoid. Jenis gangguan ini dapat menimbulkan kesan wajah bodoh yang biasa disebut wajah adenoid. Untuk mengatasinya dapat dilakukan dengan cara operasi.</div>
+        Gangguan karena penyempitan atau penyumbatan saluran pernapasan dapat disebabkan karena pembengkakan kelenjar limfe, misalnya polip (di daerah hidung) dan amandel (di daerah tekak), ataupun adenoid. Jenis gangguan ini dapat menimbulkan kesan wajah bodoh yang biasa disebut wajah adenoid. Untuk mengatasinya dapat dilakukan dengan cara operasi.]
+        <br><br>
+        <div class="audio-controls">
+          <i class="fa fa-play" id="audioControl2" onclick="toggleAudio('materiTeksAudio2', 'audioControl2')"></i>
+        </div>
+        <audio id="materiTeksAudio2">
+          <source src="../../koleksi/audio/Polip dan Amandel.mp3" type="audio/mpeg">
+        </audio>
+      </div>
       <br>
-      
       <div class="borderbab" style="text-align: left;">
         2. Tuberculosis (TBC)
       </div>
       <div class="canvas">
         Tuberculosis disebabkan oleh bakteri Bacillus tuberculosis. Selain menyebabkan radang paru-paru, penyakit ini dapat menyebabkan alveolus mengandung banyak cairan, sehingga dapat meng- ganggu proses difusi oksigen dan karbon dioksida. Pada penyakit TBC yang parah, mungkin paru-paru telah luka. Jika luka masih kecil sering dilakukan pengikatan pada luka-luka tersebut, bahkan dapat dilakukan pneumothorax, yaitu mengistirahatkan salah satu bagian dari paru-paru agar luka-luka tersebut bisa sembuh. Pneumothorax dilakukan dengan jalan mengisikan udara steril ke dalada pleura sehingga paru-paru tidak mengikuti kembang kempisnya rongga dada.
+        <br><br>
+        <div class="audio-controls">
+          <i class="fa fa-play" id="audioControl3" onclick="toggleAudio('materiTeksAudio3', 'audioControl3')"></i>
+        </div>
+        <audio id="materiTeksAudio3">
+          <source src="../../koleksi/audio/Tuberculosis.mp3" type="audio/mpeg">
+        </audio>
       </div>
       <br>
-      
+
       <div class="borderbab" style="text-align: left;">
         3. Pneumonia
       </div>
       <div class="canvas">
         Pneumonia terjadi karena infeksi bakteri Diplococcus pneumoniae. Infeksi tersebut menyebab- kan radang paru-paru atau radang dinding alveolus.
+        <br><br>
+        <div class="audio-controls">
+          <i class="fa fa-play" id="audioControl4" onclick="toggleAudio('materiTeksAudio4', 'audioControl4')"></i>
+        </div>
+        <audio id="materiTeksAudio4">
+          <source src="../../koleksi/audio/Pneumonia.mp3" type="audio/mpeg">
+        </audio>
       </div>
       <br>
       
@@ -89,6 +138,13 @@
       </div>
       <div class="canvas">
         Dipteri merupakan penyakit infeksi yang disebabkan oleh bakteri Corynebacterium diphtherial Penyakit ini memengaruhi saluran pemapasan bagian atas. Jika racun dipteri menyebar melalui aliran darah, maka hal ini akan merusak selaput jantung, demam, kelelahan, dan kadang-kadang lumpuh bahkan sering kali sampai meninggal. 
+        <br><br>
+        <div class="audio-controls">
+          <i class="fa fa-play" id="audioControl5" onclick="toggleAudio('materiTeksAudio5', 'audioControl5')"></i>
+        </div>
+        <audio id="materiTeksAudio5">
+          <source src="../../koleksi/audio/Dipteri merupakan pe.mp3" type="audio/mpeg">
+        </audio>
       </div>
       <br>
       
@@ -97,6 +153,13 @@
       </div>
       <div class="canvas">
         Penyakit ini menyebabkan sel-sel paru-paru tumbuh tidak terkendali dan tidak berfungsi sebagaimana mestinya. Jaringan kanker akan mendesak alveolus sehingga tidak berfungsi lagi. Para perokok mempunyai kemungkinan jauh lebih tinggi dibanding yang bukan perokok untuk terkena kan- ker paru-paru. Oleh karena itu sebaiknya kita tidak merokok. Asap rokok juga dapat dihirup oleh orang lain yang tidak merokok di sekitarnya. Orang tersebut dinamakan perokok pasif. Perokok pasif juga mempunyai peluang untuk terkena kanker paru-paru. Oleh karena itu, di negara-negara yang maju, perokok dilarang merokok di tempat umum, karena dikhawatirkan asap rokok akan terhirup oleh orang lain.
+        <br><br>
+        <div class="audio-controls">
+          <i class="fa fa-play" id="audioControl6" onclick="toggleAudio('materiTeksAudio6', 'audioControl6')"></i>
+        </div>
+        <audio id="materiTeksAudio6">
+          <source src="../../koleksi/audio/Kanker Paru-paru.mp3" type="audio/mpeg">
+        </audio>
       </div>
       <br>
       
@@ -115,5 +178,33 @@
         </center>
       </div>
       </div>
+      <script>
+        function toggleAudio(audioId, controlId) {
+          var audio = document.getElementById(audioId);
+          var audioControl = document.getElementById(controlId);
+          
+          if (audio.paused) {
+            audio.play();
+            audioControl.classList.remove("fa-play");
+            audioControl.classList.add("fa-pause");
+          } else {
+            audio.pause();
+            audioControl.classList.remove("fa-pause");
+            audioControl.classList.add("fa-play");
+          }
+          
+          audio.onended = function() {
+            audioControl.classList.remove("fa-pause");
+            audioControl.classList.add("fa-play");
+          };
+      
+          audio.onpause = function() {
+            if (audio.currentTime === audio.duration) {
+              audioControl.classList.remove("fa-pause");
+              audioControl.classList.add("fa-play");
+            }
+          };
+        }
+      </script>
   </body>
 </html>

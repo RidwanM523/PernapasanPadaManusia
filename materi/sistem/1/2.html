@@ -2,13 +2,26 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="../../../koleksi/Kemendikbud.png">
     <title>Pernapasan pada Manusia</title>
     <link rel="stylesheet" href="../../navigasi.css">
     <link rel="stylesheet" href="../../../border.css">
     <link rel="stylesheet" href="tabel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .audio-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .audio-controls i {
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body onload="drop();">
   
@@ -16,7 +29,7 @@
       <center>A. Sistem Pernapasan</center>
   </div>
   <div class="btn">
-      <span class="fas fa-bars"></span>
+      <span class="fa fa-bars"></span>
     </div>
       <nav class="sidebar">
         <div class="text"><img src="../../gambar/LOGO.png"></div>
@@ -24,13 +37,13 @@
           <li class="beranda"><a href="../../../index.html">Beranda</a></li>
           <li>
             <a href="../../pernapasan/1.html" class="migrasi">Materi Pembelajaran
-              <span class="fas fa-caret-down first"></span>
+              
             </a>
           </li>
           
           <li>
             <a href="#" style=" color: #906741; background: #003c25;" class="kemagnetan">Sistem Pernapasan
-              <span class="fas fa-caret-down second"></span>
+              <span class="fa fa-caret-down second"></span>
             </a>
             <ul class="kemagnetan-tampil">
               <li><a style="  color: #906741;"  href="1.html">Alat Pernapasan</a></li>
@@ -39,11 +52,19 @@
           </li>
           <li>
             <a href="../../gangguan/1.html" class="produk">Gangguan Sistem Pernapasan
-              <span class="fas fa-caret-down tiga"></span>
+              
             </a>
           
           </li>
-          <li><a href="#">EVALUASI</a></li>
+          <li>
+            <a href="#" class="migrasi">EVALUASI
+            <span class="fa fa-caret-down first"></span>
+            </a>
+            <ul class="migrasi-tampil">
+              <li><a href="../../puzzle/puzzle.html">Puzzle</a></li>
+              <li><a href="../../Evaluasi/eva.html">Kuis</a></li>
+            </ul>
+          </li>
 
         </ul>
     </nav>
@@ -64,7 +85,13 @@
       </div>
       <div class="canvas">
         Faring (rongga tekak) merupakan rongga pertigaan ke arah saluran pencernaan (esopha- gus), saluran pernapasan (batang tenggorok), dan saluran ke rongga hidung. Faring berada di be- lakang rongga hidung dan mulut meluas dari dasar tenggorok sampai setinggi ruas tulang belakang bagian leher ke-6.
-        <br>
+        <br><br>
+        <div class="audio-controls">
+          <i class="fa fa-play" id="audioControl1" onclick="toggleAudio('materiTeksAudio1', 'audioControl1')"></i>
+        </div>
+        <audio id="materiTeksAudio1">
+          <source src="../../../koleksi/audio/Faring.mp3" type="audio/mpeg">
+        </audio>
         <br>
         <div class="canvas">
           <center>
@@ -99,5 +126,33 @@
         </center>
       </div>
       </div>
+      <script>
+        function toggleAudio(audioId, controlId) {
+          var audio = document.getElementById(audioId);
+          var audioControl = document.getElementById(controlId);
+          
+          if (audio.paused) {
+            audio.play();
+            audioControl.classList.remove("fa-play");
+            audioControl.classList.add("fa-pause");
+          } else {
+            audio.pause();
+            audioControl.classList.remove("fa-pause");
+            audioControl.classList.add("fa-play");
+          }
+          
+          audio.onended = function() {
+            audioControl.classList.remove("fa-pause");
+            audioControl.classList.add("fa-play");
+          };
+      
+          audio.onpause = function() {
+            if (audio.currentTime === audio.duration) {
+              audioControl.classList.remove("fa-pause");
+              audioControl.classList.add("fa-play");
+            }
+          };
+        }
+      </script>
   </body>
 </html>

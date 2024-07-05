@@ -2,12 +2,25 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="../../../koleksi/Kemendikbud.png">
     <title>Pernapasan pada Manusia</title>
     <link rel="stylesheet" href="../../navigasi.css">
     <link rel="stylesheet" href="../../../border.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      .audio-controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .audio-controls i {
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body  onload="drop();">
   
@@ -15,7 +28,7 @@
       <center>A. Sistem Pernapasan</center>
   </div>
   <div class="btn">
-      <span class="fas fa-bars"></span>
+      <span class="fa fa-bars"></span>
     </div>
       <nav class="sidebar">
         <div class="text"><img src="../../gambar/LOGO.png"></div>
@@ -23,13 +36,13 @@
           <li class="beranda"><a href="../../../index.html">Beranda</a></li>
           <li>
             <a href="../../pernapasan/1.html" class="migrasi">Materi Pembelajaran
-              <span class="fas fa-caret-down first"></span>
+              
             </a>
           </li>
           
           <li>
             <a href="#" style=" color: #906741; background: #003c25;" class="kemagnetan">Sistem Pernapasan
-              <span class="fas fa-caret-down second"></span>
+              <span class="fa fa-caret-down second"></span>
             </a>
             <ul class="kemagnetan-tampil">
               <li><a href="../1/1.html">Alat Pernapasan</a></li>
@@ -39,12 +52,20 @@
           </li>
           <li>
             <a href="../../gangguan/1.html" class="produk">Gangguan Sistem Pernapasan
-              <span class="fas fa-caret-down tiga"></span>
+              
             </a>
           
           </li>
-          <li><a href="../../Evaluasi/eva.html">EVALUASI</a></li>
-
+          <li>
+            <a href="#" class="migrasi">EVALUASI
+            <span class="fa fa-caret-down first"></span>
+            </a>
+            <ul class="migrasi-tampil">
+              <li><a href="../../puzzle/puzzle.html">Puzzle</a></li>
+              <li><a href="../../Evaluasi/eva.html">Kuis</a></li>
+            </ul>
+          </li>
+            
         </ul>
     </nav>
 <script>
@@ -72,12 +93,26 @@
             <b>Pernapasan Dada</b> <br><br>
             <p>Pernapasan dada dimulai dengan berkontraksinya otot-otot antartulang rusuk yang menyebab- kan tulang-tulang rusuk terangkat dan rongga dada membesar. Membesarnya rongga dada tersebut menyebabkan tekanan udara di dalam paru-paru menurun, sehingga udara di luar masuk ke paru- paru (inspirasi), Apabila otot-otot antartulang rusuk berelaksasi, tulang-tulang rusuk menurun sehingga volume rongga dada mengecil. Akibatnya tekanan udara dalam paru-paru naik dan udara keluar dari paru-paru (ekspirasi).
             </p>
+            <br>
+            <div class="audio-controls">
+              <i class="fa fa-play" id="audioControl1" onclick="toggleAudio('materiTeksAudio1', 'audioControl1')"></i>
+            </div>
+            <audio id="materiTeksAudio1">
+              <source src="../../../koleksi/audio/Dada.mp3" type="audio/mpeg">
+            </audio>
           </div>
           <div id="inklinasi" style="display: none;">    
             <center><img width="270px" src="gambar/PernapasanPerut.png"></center>
             <b>Pernapasan Perut</b> <br><br>
             <p>Pernapasan perut dimulai dengan berkontraksinya otot-otot diafragma yang menyebabkan diafragma mendatar. Dengan demikian rongga dada membesar dan tekanan udara di dalam paru-paru menurun, sehingga udara luar masuk ke dalam paru-paru (inspirasi). Apabila otot-otot diafragma berelaksasi, kedudukan diafragma melengkung ke atas, akibatnya rongga dada mengecil dan tekanan udara di dalam paru-paru membesar sehingga udara keluar dari paru-paru (ekspirasi).
             </p>
+            <br>
+            <div class="audio-controls">
+              <i class="fa fa-play" id="audioControl2" onclick="toggleAudio('materiTeksAudio2', 'audioControl2')"></i>
+            </div>
+            <audio id="materiTeksAudio2">
+              <source src="../../../koleksi/audio/Perut.mp3" type="audio/mpeg">
+            </audio>
           </div>
           <br>
         <center>
@@ -108,13 +143,14 @@
     <br>
     <h3> <img src="../../gambar/kesimpulan.png"><p class="textjudul">Kesimpulan</p></h3>
     <div class="canvas">
-       <div id="sebelum"  style="color: brown;">
+       <div class="sebelum"  style="color: brown;">
           <center>
-            <b>KESIMPULAN AKAN MUNCUL SETELAH SELESAI MENJAWAB LATIHAN</b>
+            <b>KESIMPULAN AKAN MUNCUL SETELAH SELESAI MENONTON VIDEO</b>
           </center>
       </div>
-      <div id="kesimpulan" style="display:none;">
-        Sudut deklinasi adalah sudut yang dibentuk oleh jarum kompas dengan simpangan arah utara dan selatan bumi. Sedangkan Sudut inklinasi adalah sudut yang dibentuk dari penyimpangan magnet terhadap arah barat dan timur geografis.       </div>
+      <div class="kesimpulan">
+        Pada dasarnya, proses pernapasan dimulai saat udara masuk ke dalam tubuh melalui mulut atau hidung. Udara masuk ke faring, di mana udara dan makanan saling berpencar. Setelah itu, udara melewati laring, trakea, bronkus, dan akhirnya mencapai paru-paru. Di sana, oksigen dari udara masuk ke dalam darah melalui alveolus, kemudian diangkut ke seluruh tubuh oleh pembuluh darah.
+        Oksigen yang kita tarik dari udara diperlukan oleh otak untuk mengendalikan seluruh tubuh. Setelah digunakan, darah kembali ke jantung dan dipompa ke paru-paru untuk mendapatkan oksigen lagi. Proses ini terus berulang untuk menjaga tubuh tetap berfungsi dengan baik. </div>
     </div>
     <br><br>
     </div>
@@ -131,5 +167,33 @@
         </center>
       </div>
       </div>
+      <script>
+        function toggleAudio(audioId, controlId) {
+          var audio = document.getElementById(audioId);
+          var audioControl = document.getElementById(controlId);
+          
+          if (audio.paused) {
+            audio.play();
+            audioControl.classList.remove("fa-play");
+            audioControl.classList.add("fa-pause");
+          } else {
+            audio.pause();
+            audioControl.classList.remove("fa-pause");
+            audioControl.classList.add("fa-play");
+          }
+          
+          audio.onended = function() {
+            audioControl.classList.remove("fa-pause");
+            audioControl.classList.add("fa-play");
+          };
+      
+          audio.onpause = function() {
+            if (audio.currentTime === audio.duration) {
+              audioControl.classList.remove("fa-pause");
+              audioControl.classList.add("fa-play");
+            }
+          };
+        }
+      </script>
   </body>
 </html>

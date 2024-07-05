@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="../../koleksi/Kemendikbud.png">
+  <title>Pernapasan pada Manusia</title>
+  <link rel="stylesheet" href="../navigasi.css">
+  <link rel="stylesheet" href="../../border.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    #original-container {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #slot-container {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid #000;
+      width: 400px;      
+      padding: 10px;
+      background-color: rgba(47, 79, 79, 0.212);
+      
+    }
+    #puzzle-container {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid #000;
+      width: 400px;
+      padding: 10px;
+      background-color: rgba(47, 79, 79, 0.212);
+    }
+    .original {
+      height: 180px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      border: 1px solid #000;
+    }
+    .piece {
+      width: calc(33.33% - 1px);
+      height: 120px;
+      border: 1px solid #000;
+    }
+    .slot {
+      width: calc(33.33% - 1px); 
+      height: 120px; 
+      background-color: #fff;
+      border: 1px solid #000;
+      display: inline-block;
+      text-align: center;
+      line-height: 0;
+      box-sizing: border-box; 
+      margin: 0; 
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <center>Puzzle Game</center>
+</div>
+<div class="btn">
+  <span class="fa fa-bars"></span>
+</div>
+<nav class="sidebar">
+  <div class="text"><img src="../gambar/LOGO.png"></div>
+  <ul>
+    <li class="beranda"><a href="../../index.html">Beranda</a></li>
+    <li>
+      <a href="../pernapasan/1.html" class="migrasi">Materi Pembelajaran</a>
+    </li>
+    <li>
+      <a href="#" class="kemagnetan">Sistem Pernapasan
+        <span class="fa fa-caret-down second"></span>
+      </a>
+      <ul class="kemagnetan-tampil">
+        <li><a href="../sistem/1/1.html">Alat Pernapasan</a></li>
+        <li><a href="../sistem/2/1.html">Proses Pernapasan</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="../gangguan/1.html" class="produk">Gangguan Sistem Pernapasan</a>
+    </li>
+    <li><a href="#" style="color: #906741; background: #003c25;" class="migrasi">EVALUASI
+        <span class="fa fa-caret-down second"></span>
+      </a>
+      <ul class="migrasi-tampil">
+        <li><a style="  color: #906741;" href="../puzzle/puzzle.html">Puzzle</a></li>
+        <li><a href="../Evaluasi/eva.html">Kuis</a></li>
+
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<div class="content">
+  <div id="original-container">
+    <img src="/koleksi/Pernapasan pada Manusia.jpg" class="original">
+  </div>
+  <div class="container">
+    <div id="puzzle-container">
+      <img id="1" src="/koleksi/1 (5).png" class="piece" draggable="true" ondragstart="drag(event)">
+      <img id="2" src="/koleksi/1 (7).png" class="piece" draggable="true" ondragstart="drag(event)">
+      <img id="3" src="/koleksi/1 (2).png" class="piece" draggable="true" ondragstart="drag(event)">
+      <img id="4" src="/koleksi/1 (6).png" class="piece" draggable="true" ondragstart="drag(event)">
+      <img id="5" src="/koleksi/1 (1).png" class="piece" draggable="true" ondragstart="drag(event)">
+      <img id="6" src="/koleksi/1 (8).png" class="piece" draggable="true" ondragstart="drag(event)">
+      <img id="7" src="/koleksi/1 (3).png" class="piece" draggable="true" ondragstart="drag(event)">
+      <img id="8" src="/koleksi/1 (9).png" class="piece" draggable="true" ondragstart="drag(event)">
+      <img id="9" src="/koleksi/1 (4).png" class="piece" draggable="true" ondragstart="drag(event)">
+    </div>
+    <div id="slot-container">
+      <div id="slot1" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="slot2" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="slot3" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="slot4" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="slot5" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="slot6" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="slot7" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="slot8" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      <div id="slot9" class="slot" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+  </div>
+  <br>
+</div>
+
+<div class="footer">
+  <div class="navigasibawah">
+    <center>
+      <a href="../sistem/2/1.html"><button>Sebelumnya</button></a>
+      <a href="1.html"><button class="btn1">1</button></a>
+      <a href="../Evaluasi/eva.html"><button>Selanjutnya</button></a>
+    </center>
+  </div>
+</div>
+
+<script>
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    var draggableElement = document.getElementById(data);
+    var slot = ev.target;
+
+    if (slot.classList.contains("slot")) {
+      slot.innerHTML = ""; 
+      slot.appendChild(draggableElement);
+      draggableElement.style.width = "100%";
+      draggableElement.style.height = "100%";
+      draggableElement.style.margin = "0";
+    }
+  }
+</script>
+
+<script src="../navigasi.js"></script>
+</body>
+</html>
